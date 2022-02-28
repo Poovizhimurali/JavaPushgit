@@ -1,0 +1,32 @@
+Feature: Adactin Hotel Booking Application
+Scenario: Login Functionality
+Given user Launch The Adactin Application
+When user Enters The Username In The Inputbox
+And user Enters The Password In The Inputbox
+Then user Clicks The Login Button And It Navigates To The Search Hotel Page
+
+Scenario: Searching The Hotels
+When user Selecting The Location
+And user Selecting The Hotel Name
+And user Selecting The Room Type
+And user Selecting No Of Rooms
+And user Selecting The Check In Date
+And user Selecting The Check Out Date
+And user Selecting Adults per Room
+And user Selecting Child per Room
+Then user Clicks The Search Button
+
+Scenario: Searching The Select Hotels
+When user Selecting Hotel Radio Button
+Then user Clicks The Continue Button
+
+Scenario: Booking A Hotel 
+When user Enters The First Name 
+And user Enters The Last Name 
+And user Enters The Billing Address
+And user Enters The Credit Card Number
+And user Enters The Credit Card Type
+And user Enters The Expiry Date
+And user Enters The Expiry Year
+And user Enters The CVV Number
+

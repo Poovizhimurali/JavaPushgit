@@ -1,0 +1,8 @@
+package com.adactin.stepdefinition;
+
+import com.base.com.BaseClass;
+import com.pom.com.Loginpage;
+
+public class Adactin_Stepdef extends BaseClass{
+	public static Loginpage Login = new Loginpage(driver);
+}

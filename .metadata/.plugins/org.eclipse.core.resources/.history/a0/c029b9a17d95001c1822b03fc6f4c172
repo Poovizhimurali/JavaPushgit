@@ -1,0 +1,34 @@
+package com.adactin.runner;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
+
+import com.base.com.BaseClass;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features ="src\\test\\java\\com\\adactin\\feature", glue = "com.adactin.stepdefinition", monochrome = true, dryRun = true,
+plugin = {"html: Report/Cucumber_Html_Report", "pretty","json:Report/Cucumber_Json_report.json","com.cucumber.listener.ExtentCucumberFormatter:Report/Cucumber_Extent_Report.html"})
+
+public class Adactin_Runner {
+	public static WebDriver driver;
+	
+	@BeforeClass
+	public static void set_up() {
+		driver = BaseClass.BrowserLaunch("chrome");
+	}
+	
+	@AfterClass
+	public static void Hotel_Booking() {
+		//BaseClass.closewindow();
+		System.out.println("Hotel booking is completed");
+
+	}
+	
+	
+
+}

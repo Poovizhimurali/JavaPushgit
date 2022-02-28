@@ -1,0 +1,177 @@
+package com.adactin.stepdefinition;
+
+import com.base.com.BaseClass;
+import com.filereadermanager.com.File_Reader_Manager;
+import com.pom.com.Adactinloginpage;
+import com.pom.com.Loginpage;
+import com.pom.com.Page_Object_Manager;
+import com.pom.com.Search_Ahotel;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class Adactin_Stepdef extends BaseClass{
+	public static Adactinloginpage Login = new Adactinloginpage(driver);
+	public static Search_Ahotel search = new Search_Ahotel(driver);
+	
+	Page_Object_Manager pom = new Page_Object_Manager(driver);
+	
+	
+	@Given("^user Launch The Adactin Application$")
+	public void user_Launch_The_Adactin_Application() throws Throwable {
+	  // launchurl("https://adactinhotelapp.com/");
+		launchurl(File_Reader_Manager.getInstanceFR().getInstanceCR().get_Url());
+	}
+
+	@When("^user Enters The Username In The Inputbox$")
+	public void user_Enters_The_Username_In_The_Inputbox() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		Thread.sleep(3000);
+		//sendkeys(Login.getUsername(), "poovizhi1");
+		sendkeys(pom.get_Instance_Adactinlogin().getUsername(), File_Reader_Manager.getInstanceFR().getInstanceCR().get_username());
+	}
+
+	@When("^user Enters The Password In The Inputbox$")
+	public void user_Enters_The_Password_In_The_Inputbox() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    //sendkeys(Login.getPassword(), "5G84OB");
+		sendkeys(pom.get_Instance_Adactinlogin().getPassword(), File_Reader_Manager.getInstanceFR().getInstanceCR().get_password());
+	}
+
+	@Then("^user Clicks The Login Button And It Navigates To The Search Hotel Page$")
+	public void user_Clicks_The_Login_Button_And_It_Navigates_To_The_Search_Hotel_Page() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   clickonelement(pom.get_Instance_Adactinlogin().getLoginbtn()); 
+	}
+	
+	@When("^user Selecting The Location$")
+	public void user_Selecting_The_Location() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		threadsleep(3000);
+	  dropdown(pom.get_Instance_Searchpage().getLocatin(), "value", "Melbourne");
+	}
+
+	@When("^user Selecting The Hotel Name$")
+	public void user_Selecting_The_Hotel_Name() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("^user Selecting The Room Type$")
+	public void user_Selecting_The_Room_Type() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("^user Selecting No Of Rooms$")
+	public void user_Selecting_No_Of_Rooms() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("^user Selecting The Check In Date$")
+	public void user_Selecting_The_Check_In_Date() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("^user Selecting The Check Out Date$")
+	public void user_Selecting_The_Check_Out_Date() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("^user Selecting Adults per Room$")
+	public void user_Selecting_Adults_per_Room() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("^user Selecting Child per Room$")
+	public void user_Selecting_Child_per_Room() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	  
+	}
+
+	@Then("^user Clicks The Search Button$")
+	public void user_Clicks_The_Search_Button() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("^user Selecting Hotel Radio Button$")
+	public void user_Selecting_Hotel_Radio_Button() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+
+	@Then("^user Clicks The Continue Button$")
+	public void user_Clicks_The_Continue_Button() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("^user Enters The First Name$")
+	public void user_Enters_The_First_Name() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("^user Enters The Last Name$")
+	public void user_Enters_The_Last_Name() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+
+	@When("^user Enters The Billing Address$")
+	public void user_Enters_The_Billing_Address() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	  
+	}
+
+	@When("^user Enters The Credit Card Number$")
+	public void user_Enters_The_Credit_Card_Number() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	  
+	}
+
+	@When("^user Enters The Credit Card Type$")
+	public void user_Enters_The_Credit_Card_Type() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("^user Enters The Expiry Date$")
+	public void user_Enters_The_Expiry_Date() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+
+	@When("^user Enters The Expiry Year$")
+	public void user_Enters_The_Expiry_Year() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("^user Enters The CVV Number$")
+	public void user_Enters_The_CVV_Number() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@Then("^user Clicks The Book Now Button$")
+	public void user_Clicks_The_Book_Now_Button() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@Then("^user Clicks The Logout Button$")
+	public void user_Clicks_The_Logout_Button() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+
+
+
+}
